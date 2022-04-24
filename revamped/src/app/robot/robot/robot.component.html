@@ -1,9 +1,7 @@
-<!-- 
-   
 <ng-container *ngIf="robot$ | async as robot">
     <ngt-primitive
       [object]="robot.scene"
       (ready)="onReady(robot.scene, robot.animations)"
-      (animateReady)="onAnimateReady($event)"
+      (animateReady)="onAnimateReady($event.state)"
     ></ngt-primitive>
-  </ng-container> -->
+</ng-container>

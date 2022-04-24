@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CubeModule } from './cube/cube.module';
+import { RobotModule } from './robot/robot.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { CubeModule } from './cube/cube.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CubeModule
+    CubeModule,
+    RobotModule
   ],
   providers: [],
   bootstrap: [AppComponent]

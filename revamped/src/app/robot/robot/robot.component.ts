@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NgtDestroyed, NgtRender } from '@angular-three/core';
 import { NgtGLTFLoader } from '@angular-three/soba/loaders';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { takeUntil } from 'rxjs';
 import {
   AnimationAction,
@@ -15,7 +15,7 @@ import {
   selector: 'app-robot',
   templateUrl: './robot.component.html',
   styleUrls: ['./robot.component.scss'],
-  providers: [NgtDestroyed],
+  providers: [NgtDestroyed]
 })
 export class RobotComponent implements OnInit {
   robot$ = this.gltfLoaderService.load('assets/RobotExpressive.glb');
@@ -30,6 +30,7 @@ export class RobotComponent implements OnInit {
     'Standing',
   ];
   emotes = ['Jump', 'Yes', 'No', 'Wave', 'Punch', 'ThumbsUp'];
+
   animationMixer?: AnimationMixer;
 
   #actions: Record<string, AnimationAction> = {};
@@ -42,6 +43,7 @@ export class RobotComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
   }
 
   onReady(model: Group, animations: AnimationClip[]) {
@@ -71,7 +73,7 @@ export class RobotComponent implements OnInit {
     this.#activeAction.play();
   }
 
-  onAnimateReady({ delta }: any) {
+  onAnimateReady({ delta }: NgtRender) {
     if (this.animationMixer) {
       this.animationMixer.update(delta);
     }
