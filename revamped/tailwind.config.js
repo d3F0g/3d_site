@@ -1,0 +1,9 @@
+module.exports = {
+  mode: "jit",
+  content: ['./src/app/**/*.{html,ts}'],
+  darkMode: "class", // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+}
