@@ -43,7 +43,12 @@ export class RobotComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
+    // setTimeout(() => {
+    //   this.fadeToAction('Walking')
+    // }, 1000);
+    // setTimeout(() => {
+    //   this.fadeToAction('Running')
+    // }, 2000);
   }
 
   onReady(model: Group, animations: AnimationClip[]) {
